@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- Bootstrap -->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row m-3 ml-3">
+        <!-- search bar -->
+        <div class="jumbotron bg-primary col-2 m-1">
+          <h1 class="display-4 searchsmall text-white font-weight-bold">Seach for a City</h1>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend m-n1">
+              <button class="input-group-text mt-1 mb-1" type="button" id="searchInputBtn">search</i> </button>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" id="searchInput" placeholder=(city,&nbsp;state) aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item" type="button">Cras justo odio</li>
+              <li class="list-group-item" type="button">Dapibus ac facilisis in</li>
+              <li class="list-group-item" type="button">Morbi leo risus</li>
+              <li class="list-group-item" type="button">Porta ac consectetur ac</li>
+              <li class="list-group-item" type="button">Vestibulum at eros</li>
+              <li class="list-group-item" type="button">Dapibus ac facilisis in</li>
+              <li class="list-group-item" type="button">Morbi leo risus</li>
+              <li class="list-group-item" type="button">Porta ac consectetur ac</li>
+              <li class="list-group-item" type="button">Vestibulum at eros</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- main dash -->
+          <div class="jumbotron bg-primary col-9 m-1">
+              <h1 class="display-4 text-white font-weight-bold mb-4">Weather Dashboard</h1>
+              <ul class="bulletless text-white">
+                <li id="temp"><strong>Temperature:</strong></li>
+                <li id="humidity"><strong>Humidity:</strong></li>
+                <li id="windSpeed"><strong>Wind Speed:</strong></li>
+                <li id="uvIndex"><strong>UV Index:</strong></li>
+              </ul>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              
+         <!-- card group for 5 day forcast -->
+            <div><h1 class="mt-1 mb-n4 text-white">5 Day Forcast</h1>
+              <div class="card-group mt-5">
+                  <div class="card m-1 mt-n2">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" id=day1>Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  <div class="card m-1 mt-n2">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" id=day2>Card title</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  <div class="card m-1 mt-n2">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" id=day3>Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  <div class="card m-1 mt-n2">
+                      <img src="..." class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title" id=day4>Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card m-1 mt-n2">
+                      <img src="..." class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title" id=day5>Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
