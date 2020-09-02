@@ -31,3 +31,8 @@ This app is abiable at https://cr31293.github.io/Weather-Dashboard/ and the sour
 
 ## Screenshots
 
+![Home](Assets/home.PNG)
+
+![SearchOne](Assets/searchOne.PNG)
+
+![SearchTwo](Assets/searchTwo.PNG)
