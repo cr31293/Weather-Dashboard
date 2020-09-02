@@ -15,6 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
   <div class="container-fluid">
@@ -24,33 +25,25 @@
           <h1 class="display-4 searchsmall text-white font-weight-bold">Seach for a City</h1>
           <div class="input-group mb-3">
             <div class="input-group-prepend m-n1">
-              <button class="input-group-text mt-1 mb-1" type="button" id="searchInputBtn">search</i> </button>
+              <button class="input-group-text mt-1 mb-1 searchInputBtn" type="button" id="searchInputBtn">search</i> </button>
             </div>
             <input type="text" class="form-control" aria-label="Sizing example input" id="searchInput" placeholder=(city,&nbsp;state) aria-describedby="inputGroup-sizing-default">
           </div>
           <div>
-            <ul class="list-group">
-              <li class="list-group-item" type="button">Cras justo odio</li>
-              <li class="list-group-item" type="button">Dapibus ac facilisis in</li>
-              <li class="list-group-item" type="button">Morbi leo risus</li>
-              <li class="list-group-item" type="button">Porta ac consectetur ac</li>
-              <li class="list-group-item" type="button">Vestibulum at eros</li>
-              <li class="list-group-item" type="button">Dapibus ac facilisis in</li>
-              <li class="list-group-item" type="button">Morbi leo risus</li>
-              <li class="list-group-item" type="button">Porta ac consectetur ac</li>
-              <li class="list-group-item" type="button">Vestibulum at eros</li>
+            <ul class="list-group searchInputBtn" id="recentSearch">
+                  <!-- appended list goes here -->
             </ul>
           </div>
         </div>
 
         <!-- main dash -->
           <div class="jumbotron bg-primary col-9 m-1">
-              <h1 class="display-4 text-white font-weight-bold mb-4">Weather Dashboard</h1>
+              <h1 class="display-4 text-white font-weight-bold mb-4" id="wDash">Weather Dashboard</h1>
               <ul class="bulletless text-white">
-                <li id="temp"><strong>Temperature:</strong></li>
-                <li id="humidity"><strong>Humidity:</strong></li>
-                <li id="windSpeed"><strong>Wind Speed:</strong></li>
-                <li id="uvIndex"><strong>UV Index:</strong></li>
+                <strong><li ><p id="temp">Temperature:</p></li></strong>
+                <strong><li ><p id="humidity">Humidity:</p></li></strong>
+                <strong><li ><p id="windSpeed"><strong>Wind Speed:</p></li></strong>
+                <strong><li ><p id="uvIndex"><strong>UV Index:</p></li></strong>
               </ul>
               <hr class="my-4">
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -104,7 +97,9 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+
+
 </body>
 </html>
