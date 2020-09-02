@@ -4,7 +4,7 @@ var stateArray = [""];
 $("#searchInputBtn").on("click", function(event) {
     event.preventDefault();
 
-
+    $(".card-group").empty();
 
     var cityArray = [""];
     var stateArray = [""]; 
@@ -28,7 +28,7 @@ $("#searchInputBtn").on("click", function(event) {
     console.log(curState);
 
     // save search to recent list
-    var list = document.getElementById("recentSearch");
+    var  list = document.getElementById("recentSearch");
     var listLen = $("#recentSearch").length;
     
         var li = document.createElement("li");
@@ -48,24 +48,59 @@ $("#searchInputBtn").on("click", function(event) {
         url: queryURL,
         method: "GET",
     }).then(function(response) {
-        
+
+
         for (var i = 0; i < response.list.length; i++) {
-            var temperature = ((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(0) + "\xB0 F";
-            var date = response.list[i].dt_txt.split(" ")[0]
+
+                    // // conditional to only get data 1 per day
+
+            console.log(i);
+            var date = response.list[i].dt_txt.split(" ")[0];
+            console.log(date);
+            console.log(date[8]);
+            console.log(date[9]);
             var day = date.split("-")[2];
             var month = date.split("-")[1].charAt(1);
             var year = date.split("-")[0];
             var currentDate =  month + "/" + day + "/" + year ;
+            var temperature = ((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(0) + "\xB0 F";
             var humidity = response.list[i].main.humidity;
             var windSpeed = response.list[i].wind.speed;
+            var icon = response.list[0].weather[0].discription;
+            var iconAddress = "https://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png";
+            if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
 
-        // // conditional to only get data 1 per day
-        if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
+                
+                var card = $("<div>").attr("class", "card m-1 mt-n2");
+                    // var img
+                var cardBody = $("<div>").attr("class", "card-body bg-primary");
+                
 
+                    $(".card-group").append(card);
+                    
+                    card.append(cardBody);
+                
+                var cardDate = $("<h4>").attr("class", "card-title").text(currentDate);
+                    cardBody.append(cardDate);
+                var cardTemp = $("<p>").attr("class", "card-text small").text("temp: " + temperature);
+                    cardBody.append(cardTemp);
+                var cardHumid = $("<p>").attr("class", "card-text small").text("Humidity: " + humidity);
+                    cardBody.append(cardHumid);
+                var cardWind = $("<p>").attr("class", "card-text small").text("Wind Speed: " + windSpeed + " m/s");
+                    cardBody.append(cardWind);
+                var cardIcon = $("<img>").attr("src", iconAddress).addClass("img-fluid card-img-top").attr("alt",icon);
+                    cardBody.append(cardIcon);
 
-            // add state searched and date  to dash header
-            document.getElementById("wDash");
-            $("#wDash").text(city + ", " + state + ": " + currentDate);
+                 // add state searched and date  to dash header
+                document.getElementById("wDash");
+                $("#wDash").text(city + ", " + state + ": " + response.list[0].dt_txt.split());
+
+                
+                
+            }
+        }
+
+           
         
             // add today's temp to dash
             document.getElementById("#temp");
@@ -79,15 +114,11 @@ $("#searchInputBtn").on("click", function(event) {
              document.getElementById("windSpeed");
              $("#windSpeed").text("Wind Speed: " + windSpeed + " meters per second");
 
+console.log(response);
 
-
-            }
+            })
         
 
-
-        }
-
-    })
 
 });
 
